@@ -12,9 +12,6 @@ print(after, 'After')
 
 // 2. ADD L8 IMAGE AS MAP LAYER
 
-// As True Color RGB:
-// Map.addLayer(after.select(['SR_B4','SR_B3','SR_B2']), {min: 7000, max: 30000}, 'After321')
-
 // As False Color RGB:
 Map.addLayer(after.select(['SR_B6','SR_B5','SR_B4']), {min: 7000, max: 30000}, 'After543')
 
@@ -29,13 +26,6 @@ print(before)
 
 // 4. CREATE BEFORE/AFTER MAP WITH SLIDER
 var linkedMap = new ui.Map();
-
-// // Add L5 as True Color RGB
-// linkedMap.addLayer(before, {
-//   bands: ['SR_B3', 'SR_B2','SR_B1'],
-//   min: 7000,
-//   max: 30000,
-// }, 'Before321');
 
 // Add L5 as False Color RGB
 linkedMap.addLayer(before, {
@@ -56,13 +46,3 @@ var splitPanel = new ui.SplitPanel({
   style: {stretch: 'both'}
 });
 ui.root.widgets().reset([splitPanel]);
-
-// //NDWI = Green - NIR / Green + NIR
-// var NDWI_2022 = after.normalizedDifference(['SR_B3','SR_B5'])
-// var NDWI_2004 = before.normalizedDifference(['SR_B3','SR_B5'])
-
-// // 2. ADD L8 IMAGE AS MAP LAYER
-
-// //Add NDWI before and after
-// Map.addLayer(NDWI_2022)
-// Map.addLayer(NDWI_2004)
